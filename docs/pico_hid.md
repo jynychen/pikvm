@@ -1,15 +1,15 @@
 # Raspberry Pi Pico HID
 
 The Pico HID is a part of DIY PiKVM V1 platform that performs keyboard and mouse emulation.
-It has excellent compatibility, and by default emulates USB, including two mouse modes: absolute and relative.
+It has excellent compatibility, and emulates USB by default, including two mouse modes: absolute and relative.
 
 Full list of features:
 
 | Feature | Enabled by default |
 |---------|--------------------|
 | USB Keyboard, absolute & relative mouse | Yes |
-| USB Absolute Mouse for Windows 95 | |
-| PS/2 Keyboard & mouse | |
+| USB Absolute Mouse for Windows 95 | No |
+| PS/2 Keyboard & mouse | No |
 
 The scope of the Pico HID is not limited to V1 platform, it can also be used with V2 and even V3 platform,
 if you need to emulate a PS/2 keyboard and mouse or use a [legacy multiport KVM switch](https://github.com/pikvm/pikvm/issues/7)
@@ -17,7 +17,9 @@ which does not fully support USB standards.
 
 This page explains how to build, connect and use all the features of the Pico HID.
 
-!!! note "KVMD >= 3.241 is required for the Pico HID"
+!!! note "Software requirements"
+    KVMD >= 3.241 is required for the Pico HID.
+    For new builds, this will be the case, but if you want to use the Pico HID on the old PiKVM, you will need to update OS.
 
 
 -----
@@ -92,7 +94,8 @@ Connect all the parts according to this scheme:
 
     <img src="ps2_level_shifter_soldering.png" width="300" />
 
-    !!! note "Don't forget to enable PS/2 mode support as described in the next paragraph"
+    !!! note
+        Don't forget to enable PS/2 mode support as described in the next paragraph
 
 
 -----
@@ -171,7 +174,7 @@ If you are making the Pico HID for V2 or V3, add the following lines to the PiKV
 !!! warning
     **This section is intended for advanced users of the [legacy Arduino HID](arduino_hid.md).**
 
-    It may seem tempting, but **don't to use the Arduino HID for the new PiKVM builds**
+    It may seem tempting, but **don't to use the Arduino HID for new PiKVM builds**
     just because you have it at your fingertips. Connecting and flashing Arduino
     is much more time consuming than Pico. In addition, different Arduino board work
     with different voltages, they may or may not have SPI (for the Pico, we use SPI to 

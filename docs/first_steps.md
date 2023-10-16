@@ -1,17 +1,17 @@
 # First steps
 
-!!! note
-    Before this guide:
+!!! note "Before this guide"
 
-    * V4 device: please follow this [first](v4.md)
-    * V3 HAT/Pre-Assembled: follow [this](v3.md)
-    * V0-V2 DIY: follow [this](https://github.com/pikvm/pikvm)
+    * PiKVM V4 device: please follow this [first](v4.md)
+    * PiKVM V3 HAT/Pre-Assembled: follow [this](v3.md)
+    * DIY V0-V2: follow [this](https://github.com/pikvm/pikvm)
 
 
 -----
 ## First power on
 
 ??? example "Optional setting up Wi-Fi"
+
     !!! warning "Please read the following caveats" 
         1. There is nothing more reliable than wired Ethernet, so it's better to use the **cable**. But who are we to stop you... :)
         2. Adding FIRSTBOOT=1 or FIRSTBOOT=1 will erase the msd partition, if used afterwords as a means of switching wifi networks, do not include this option. Instead, use different supplicant files for each wifi SSID, mv files to the supplicant dir as needed and reboot.
